@@ -6,55 +6,56 @@
 
         body {
             font-family: "Share Tech", sans-serif;
-            overflow: visible; /* Allow content to overflow if necessary */
-            background-color: #ffffff;
+            /*overflow: visible;  Allow content to overflow if necessary */
+            background-color: #0a0461;
+            background-image: url("nav.jpg");
             height: 100vh;
             position: relative;
+            color: #ffffff;
         }
 
         .navbar{
-            position: fixed; /* Fix the navbar at the top */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px; /* Increased height for better coverage */
-            background: url('nav.jpg'); /* Set background image */
-            background-size: 100% 100%; /* Ensure the image fills the entire navbar */
+            height: 100px; 
+            background: url('nav.jpg');
             display: flex;
             align-items: center;
-            justify-content: center; /* Center the logo and nav links */
-            z-index: 1000; /* Ensure it stays above other content */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+            justify-content: center; 
+            z-index: 1000; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .nav-links {
             position: absolute;
             top: 50%; /* Center vertically */
             right: 0; /* Align to the right side */
-            transform: translateY(-50%); /* Adjust for centering */
+            transform: translateY(-50%);            
             width: auto; /* Adjust width */
             height: auto; /* Adjust height */
             display: flex;
             justify-content: flex-end; /* Align links to the right side */
             gap: 25px; /* Add spacing between links */
             padding: 10px 30px; /* Add padding on all sides */
-            align-items: center; /* Ensure vertical alignment */
+            align-items: center; 
             list-style: none;
         }
 
         .logo-container {
-            position: fixed; /* Ensure it stays visible and fixed in the navbar */
-            top: 10px; /* Adjust spacing for better visibility */
-            left: 20px; /* Add spacing from the left edge */
-            height: 50px; /* Maintain reduced height */
+            position: fixed;
+            top: 10px; 
+            left: 20px; 
+            height: 50px; 
             display: flex;
-            align-items: center; /* Center the logo vertically */
-            z-index: 1001; /* Ensure it stays above other content */
+            align-items: center; 
+            z-index: 1001;
         }
 
         .logo {
-            height: 100%; /* Ensure the logo fills the container height */
-            width: auto; /* Maintain aspect ratio */
+            height: 100%; 
+            width: auto; 
         }
         
         .nav-links li a {
@@ -71,42 +72,156 @@
             transform: scale(1.1);
         }
 
-        section {
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            height: calc(100vh - 60px);
+        #home {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            background-color: #062614;
+            gap: 90px; /* Space between info and image */
+             height: calc(100vh - 100px); 
+            padding: 0 5%;
+            text-align: left;
+            color: #ffffff;
         }
 
-        .profile-pic{   
-            width: 300px;
-            height: 300px;
+        .home-info {
+            text-align: left; /* Align text to the left */
+            flex: 0 1 auto; /* Do not stretch, only take needed space */
+            padding-right: 0;
+            margin-right: 0;
         }
-        .profile-pic img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+        .home-info h1 {
+            font-size: 55px;
+            color: #ffffff;
+        }
+
+        .home-info h2 { 
+            font-size: 32px;    
+            color: #ffffff;
+            margin-top: -10px;
+        }
+        .home-info h1, .home-info h2 {
+            margin: 0; 
+            padding: 5px 0;  
         }
         
-        p{
-            font-size: 18px;
-            color: #ffffff;
-            text-align: center;
-            margin-top: 20px;
+        .sci {
+            display: flex;
+            gap: 15px; /* Add spacing between icons */
+            margin-top: 20px; /* Add margin to separate from other content */
         }
 
-        footer {
+        .sci a {
+            color: #ffffff; /* Ensure icons are visible */
+            font-size: 24px; /* Adjust icon size */
+            transition: transform 0.3s ease;
+        }
+
+        .sci a:hover {
+            transform: scale(1.2); /* Add hover effect */
+            color: #28efba; /* Change color on hover */
+        }
+        
+        .btn-sci {
+            margin-top: 20px; /* Add spacing above the button */
+            text-align: left; /* Align the button to the left */
+        }
+
+        .btn-sci .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #28efba;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-sci .btn:hover {
+            background-color: #00bfff; /* Highlight color on hover */
+            transform: scale(1.1); /* Slightly enlarge the button */
+        }
+
+        .home-info, .home-img {
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+    .home-img {
+      position: relative;
+      width: 320px; /* Match img-box dimensions */
+      height: 320px; /* Match img-box dimensions */
+      flex: 0 1 auto; /* Do not stretch, only take needed space */
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-box {
+      position: relative; /* Ensure img-box is the parent container */
+      width: 320px;
+      height: 320px;
+      border: 3px solid transparent;
+      border-top: 3px solid #00bfff;
+      border-radius: 50%;
+      animation: rotate 2s linear infinite;
+      z-index: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-item {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-360deg);
+      animation: counterRotate 2s linear infinite;
+    }
+
+    .img-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      animation: none !important;
+      transition: none !important;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes counterRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+    
+         footer {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 40px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
